@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-holidays',
+  selector: 'holidays-component',
   templateUrl: './holidays.component.html',
   styleUrls: ['./holidays.component.scss']
 })

@@ -1,9 +1,14 @@
 :host {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 .mat-card {
   width: 50%;
+  position: relative;
+  float: right;
+  bottom: 15%;
   margin-top: 10%;
-  margin-left: 10%;
+  margin-right: 2%;
+  border-radius: unset !important;
 }
+
