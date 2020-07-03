@@ -2,6 +2,34 @@
   padding: 5% 10% 5% 10%;
 }
 
-.half-width {
-  width: 50%;
+mat-button-toggle-group {
+  height: 10%;
+}
+
+// .destination {
+//   .mat-form-field {
+//     margin-right: 10%;
+//   }
+// }
+.flight-type {
+  width: 100%;
+  h1 {
+    margin-right: 10%;
+  }
+}
+
+.dates, .destination {
+  mat-form-field, .mat-form-field-flex { 
+    margin-right: 5%;
+    background-color: transparent !important;
+  }
+}
+
+
+.flight-field {
+  width: 200px;
+}
+
+.number-field { 
+  width: 150px;
 }

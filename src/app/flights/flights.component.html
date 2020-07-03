@@ -1,42 +1,51 @@
 <div class="container">
-    <div>
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="destinationType">
-            <mat-button-toggle value="domestic" name="">Domestic</mat-button-toggle>
-            <mat-button-toggle value="international" name="">International</mat-button-toggle>
+  <form [formGroup]="flightBookingForm" (ngSubmit)="onSearchFlights()">
+
+    <div class="flight-type">
+      <h1>Book your flights</h1>
+        <mat-button-toggle-group formControlName="flightType" >
+            <mat-button-toggle value="domestic">Domestic</mat-button-toggle>
+            <mat-button-toggle value="international">International</mat-button-toggle>
         </mat-button-toggle-group>
     </div>
+  
+    <div class="destination">
 
-    <mat-form-field class="half-width">
+    <mat-form-field class="flight-field">
         <mat-label>From</mat-label>
-        <input matInput placeholder="Eg. Melbourne, Australia" [(ngModel)]="from" name="from" required>
+        <input matInput placeholder="Eg. Melbourne, Australia" name="from"   formControlName="from" required>
+        <mat-error *ngIf="hasError('from', 'required')">From is required</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="half-width">
+      <mat-form-field class="flight-field">
         <mat-label>To</mat-label>
-        <input matInput placeholder="Eg. New York, United States" [(ngModel)]="to" name="to" required>
+        <input matInput placeholder="Eg. New York, United States" formControlName="to"  required>
       </mat-form-field>
 
+    </div>
 
-      <mat-form-field appearance="fill">
+    <div class="dates">
+      <mat-form-field appearance="fill" class="flight-field">
         <mat-label>Departure</mat-label>
-        <input matInput [matDatepicker]="departurePicker" placeholder="YYYY/MM/DD" [(ngModel)]="departureDate" required>
+        <input matInput [matDatepicker]="departurePicker" placeholder="YYYY/MM/DD" formControlName="departureDate" required>
         <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
         <mat-datepicker #departurePicker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="flight-field">
         <mat-label>Return</mat-label>
-        <input matInput [matDatepicker]="returnPicker" placeholder="YYYY/MM/DD" [(ngModel)]="returnDate" required>
+        <input matInput [matDatepicker]="returnPicker" placeholder="YYYY/MM/DD" formControlName="returnDate" required>
         <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
         <mat-datepicker #returnPicker></mat-datepicker>
       </mat-form-field>
-
-      <mat-form-field class="full-width">
+ 
+      <mat-form-field class="number-field">
         <mat-label>Adults</mat-label>
-        <input matInput placeholder="" value="1" [(ngModel)]="adults" required>
+        <input matInput placeholder="" value="1" required formControlName="numAdults">
       </mat-form-field>
+    </div>
 
-
-    <button mat-button color="primary" (click)="searchFlights()">Search Flights</button>
-
+    <button mat-button color="primary">Search Flights</button>
+  </form>
 </div>
+

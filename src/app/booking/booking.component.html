@@ -3,22 +3,38 @@
 
    
 <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Flights">
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="small">flight</mat-icon>
+        Flights
+      </ng-template>
         <div class="example-small-box mat-elevation-z4">
           <flights-component></flights-component>
         </div>
       </mat-tab>
-      <mat-tab label="Hotels">
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="small">hotel</mat-icon>
+          Hotels
+        </ng-template>
         <div class="example-large-box mat-elevation-z4">
           <hotels-component></hotels-component>
         </div>
       </mat-tab>
+
       <mat-tab label="Flights+Hotels">
         <div class="example-large-box mat-elevation-z4">
           <flightshotels-component></flightshotels-component>
         </div>
       </mat-tab>
-      <mat-tab label="Holidays">
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="small">beach_access</mat-icon>
+          Holidays
+        </ng-template>
         <div class="example-large-box mat-elevation-z4">
           <holidays-component></holidays-component>
         </div>
